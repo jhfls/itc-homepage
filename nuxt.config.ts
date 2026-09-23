@@ -51,12 +51,13 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    preset: 'cloudflare-pages',
+    preset: 'cloudflare-module',
     compatibilityDate: '2026-09-20',
     cloudflare: {
       wrangler: {
         name: 'jhfls-itc',
         pages_build_output_dir: './dist',
+        route: { pattern: 'itc.jhfls.org', custom_domain: true },
       },
     },
     prerender: {
