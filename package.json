@@ -1,0 +1,37 @@
+{
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "portless",
+    "dev:port": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "deploy": "wrangler --cwd dist pages deploy",
+    "typecheck": "nuxt typecheck",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.16.0",
+    "@nuxt/fonts": "^0.14.0",
+    "nuxt": "^4.5.2",
+    "vue": "^3.5.42",
+    "vue-router": "^5.3.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^9.5.1",
+    "@tailwindcss/vite": "^4.1.12",
+    "@typed-sigterm/eslint-config": "^1.7.1",
+    "eslint": "^10.11.0",
+    "tailwindcss": "^4.1.12",
+    "typescript": "^5.9.2",
+    "vue-tsc": "^3.3.11",
+    "wrangler": "^4.33.1"
+  },
+  "portless": {
+    "name": "itc.jhfls",
+    "script": "dev:port"
+  }
+}
