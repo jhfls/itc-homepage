@@ -51,23 +51,20 @@ export default defineNuxtConfig({
     ],
   },
 
-  // 静态内容为主：全站预渲染，输出可直接部署到 Cloudflare Pages。
-  // Cloudflare preset 会产出 dist（含静态 HTML + _worker.js）。
   nitro: {
     preset: 'cloudflare-pages',
-    // Cloudflare 部署配置收敛在这里：构建时 nitro 会生成 dist/_worker.js/wrangler.json
-    // （name / compatibility_date / compatibility_flags / pages_build_output_dir），
-    // 不再需要在仓库里放 wrangler.jsonc。
     compatibilityDate: '2026-09-20',
     cloudflare: {
-      deployConfig: true,
-      nodeCompat: true,
-      wrangler: { name: 'jhfls-itc-homepage' },
+      wrangler: {
+        name: 'www',
+        routes: [
+          { pattern: 'itc.jhfls.org', custom_domain: true },
+        ],
+        pages_build_output_dir: './dist',
+      },
     },
     prerender: {
-      // 从首页爬全站：所有身份页均有站内链接，爬虫可达；再显式列出以防漏页。
       crawlLinks: true,
-      routes: ['/', '/roles', '/roles/creator', '/roles/mentor', '/roles/media', '/roles/fellow', '/roles/visitor'],
     },
   },
 });
