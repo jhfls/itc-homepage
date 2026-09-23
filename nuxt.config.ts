@@ -55,8 +55,13 @@ export default defineNuxtConfig({
     compatibilityDate: '2026-09-20',
     cloudflare: {
       wrangler: {
-        name: 'jhfls-itc',
+        name: 'jhfls-itc-homepage',
         route: { pattern: 'itc.jhfls.org', custom_domain: true },
+        d1_databases: [{
+          database_id: '6068c299-8a65-4967-8259-9202c1b20c01',
+          database_name: 'homepage-content',
+          binding: 'DB',
+        }],
       },
     },
     prerender: {
