@@ -56,10 +56,6 @@ export default defineNuxtConfig({
     cloudflare: {
       wrangler: {
         name: 'www',
-        route: {
-          pattern: 'itc.jhfls.org',
-          custom_domain: true,
-        },
         pages_build_output_dir: './dist',
       },
     },
