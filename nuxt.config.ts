@@ -55,7 +55,7 @@ export default defineNuxtConfig({
     compatibilityDate: '2026-09-20',
     cloudflare: {
       wrangler: {
-        name: 'www',
+        name: 'jhfls-itc',
         pages_build_output_dir: './dist',
       },
     },
